@@ -1,0 +1,187 @@
+
+
+// basic colors
+$color-white: #fff;
+$button-border: #d2ddef;
+$color-red: #cc3d00;
+$color-border-red: #ff4d4f;
+$color-light-orange: #f5823429;
+$color-red-op: rgba(204, 61, 0, 0.02);
+$color-red-op-5: rgba(204, 61, 0, 0.5);
+$color-red-op-0: rgba(204, 61, 0, 0);
+$color-lightgray: #f0f2f6;
+$color-darkgray: #4f5760;
+$color-black: #2c3136;
+$color-yellow: #f1cf5b;
+$color-torquis: #7ecabe;
+$color-cyan: #4db8c3;
+$color-purple: #ab4dc3;
+$color-light-ocean: #e2f6f7;
+$color-lightgray-2: #9d9d9d;
+$color-black: #000000;
+$color-gray-blue: #eaf1fe;
+$color-grey: #666666;
+
+// colors
+$color-blue: #2e79f8;
+$color-blue-light-shade: #1890ff;
+$color-green: #32c788;
+$color-green-opc: rgba(53, 216, 161, 0.1);
+$color-blue-light: #2a4a79;
+$color-dark-blue: #9cabf4;
+$color-hard-blue: #20347d;
+$color-orange: #f58234;
+$orange-panel: rgba(245, 130, 52, 0.3);
+$orange-panel-border: #f58234;
+$color-light-gray: #ebf3ff;
+$color-light-grayies: #f2f7ff;
+$color-blue-text: #0c4da2;
+$gray-panel: rgba(90, 140, 255, 0.1);
+$gray-panel-border: #5a8cff;
+$gray-panel-shadow: #57a8e9;
+$green-panel: rgba(126, 211, 33, 0.1);
+$green-panel-border: #7ed321;
+$yellow-panel: #fff9e6;
+$yellow-panel-border: #ffc107;
+$yellow-panel-opc: lighten($yellow-panel-border, 42);
+$red-panel: rgba(204, 61, 0, 0.12);
+$red-panel-border: #cc3d00;
+$light-green: #f9fcff;
+$text-gray: #a5bcdf;
+$border-gray: rgba(165, 188, 223, 0.5);
+$pannel-bg: #ebf1f8;
+$disabled-section-gainsboro: #dcdcdc;
+$color-red-icon: red;
+$light-blue: #2e79f88c;
+$editor-highlight-light: #dde8f2;
+
+// scheduler color codes
+$yellow-panel-background: lighten($yellow-panel-border, 37);
+$red-panel-background: lighten($red-panel-border, 48);
+$green-panel-background: lighten($color-green, 40);
+$blue-panel-background: lighten($color-blue, 28);
+$dark-blue-panel-background: lighten($color-blue, 5);
+$orange-panel-background: lighten($color-orange, 30);
+$dark-green-panel-background:rgb(2, 48, 32);
+
+// components colors:
+$app-background: #f7f9fb;
+$content-color: #748aac;
+$content-dark-color: $color-white;
+$content-dark-subcolor: #c1d4e7;
+$content-background: $color-white;
+$content-dark-background: $color-black;
+
+$border-color: rgba(165, 188, 223, 0.7);
+$background-active: rgba(50, 199, 136, 0.1);
+
+// components colors:
+$app-sidebar: $content-dark-background;
+
+// components dimentions:
+$header-height: 6rem;
+$sidebar-width: 64px;
+$menu-width: 20.0rem;
+$menu-compact-width: 5.0rem;
+$component-inner-spaceing: 0.3rem;
+$page-horizontal-space: 4.0rem;
+$sidebar-helper-width: $page-horizontal-space - 5.0rem;
+
+// global stuff
+$global-font-size: 1.6rem;
+$component-margin: 4.0rem;
+$line-height: 3.0rem;
+$border-radius: 4.0rem;
+$border-radius-small: $border-radius;
+
+// fonts:
+$font-size-xxs: 0.9rem;
+$font-size-xxm: 1.0rem;
+$font-size-xs: 1.1rem;
+$font-size-xsm: 1.2rem;
+$font-size-s: 1.3rem;
+$font-size-m: 1.4rem;
+$font-size-ml: 1.5rem;
+$font-size-l: 1.6rem;
+$font-size-ml: 1.8rem;
+$font-size-xl: 2.0rem;
+$font-size-lxl: 2.2rem;
+$font-size-xxl: 2.4rem;
+$font-size-2xl: 3.0rem;
+$font-size-xxxl: 3.6rem;
+$font-size-40: 4.0rem;
+$font-size-g: 4.8rem;
+
+
+// padding variable
+
+$gap-01: 0.1rem;
+$gap-02: 0.2rem;
+$gap-03: 0.3rem;
+$gap-04: 0.4rem;
+$gap-05: 0.5rem;
+$gap-06: 0.6rem;
+$gap-07: 0.7rem;
+$gap-08: 0.8rem;
+$gap-09: 0.9rem;
+$gap-10: 1.0rem;
+$gap-11: 1.1rem;
+$gap-12: 1.2rem;
+$gap-13: 1.3rem;
+$gap-14: 1.4rem;
+$gap-15: 1.5rem;
+$gap-16: 1.6rem;
+
+
+
+// Media query for screen size
+$xxlg-desktop:4000px;
+$xlg-desktop:2400px;
+$lg-desktop:1840px;
+$medium-desktop:1600px;
+$max-desktop:1440px;
+$mid-sm-desktop: 1230px;
+$sm-desktop: 1352px;
+$desktop: 1201px;
+$min-desktop: 1200px;
+$lg-tablet: 1024px;
+$tablet: 992px;
+$min-tablet: 991px;
+$tablet-medium: 767px;
+$mobile: 479px;
+
+// colors
+@function getRGBValues($color) {
+  @return #{red($color), green($color), blue($color)};
+}
+
+// ---------- Font Weight mixin -----------//
+
+$font-thin: 100;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+$font-ex-bold: 900;
+
+// ----------box shadow css --------------//
+
+$box-shadow-base: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+$box-shadow-base-2: 0 1px 8px 0 rgba(0, 0, 0, 0.16);
+$box-shadow-base-3: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+$box-shadow-base-4: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+$border-radius-base: 4px;
+$border-radius-base-2: 5px;
+
+$scheduler-row-height: 40px;
+
+
+@media (min-width: $max-desktop) {
+  $font-size-xsm: 1.4rem;
+}
+
+$document-preview-background: rgba(165, 188, 223, 0.1);
+$color-warning: #fff2cc;
+$color-alert: #fce0bb;
+$background-widget-spinner: rgba(255, 255, 255, 0.4);
+$background-widget-spinner-darker: rgba(255, 255, 255, 0.6);

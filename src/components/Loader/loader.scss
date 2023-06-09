@@ -1,0 +1,25 @@
+@import '../../css/mixin.scss';
+
+.custom-loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  background-color: rgba(255, 255, 255, 0.7);
+  .ant-spin-spinning {
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    height: 100%;
+    .ant-spin-dot-spin {
+      font-size: 60px;
+      i {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+}
+

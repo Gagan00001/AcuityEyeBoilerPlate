@@ -1,0 +1,56 @@
+@import "../../../css/vars";
+@import "../../../css/root";
+@import "../../../css/mixin";
+
+.custom-input-disabled {
+  .ant-row {
+    .ant-form-item-label > label {
+      font-size: $font-size-xsm;
+      color: $color-blue-light;
+      white-space: nowrap;
+      width: 11.6rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      line-height: 3.0rem;
+    }
+    .ant-form-item-control {
+      .ant-input {
+        height: 2.8rem;
+        background-color: rgba(0, 0, 0, 0);
+        color: $color-blue-light;
+        border: 0px;
+        font-weight: 500;
+        padding: 0;
+      }
+      .ant-input:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+.ant-col.ant-col-20.ant-form-item-control {
+  max-width: 100%;
+}
+
+
+@media (min-width: $medium-desktop) {
+  .custom-input-disabled .ant-row .ant-form-item-label > label {
+    white-space: nowrap;
+    width: 14.0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+}
+@media (min-width: $lg-desktop) {
+  .custom-input-disabled .ant-row .ant-form-item-label > label {
+    white-space: nowrap;
+    width: 16.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    padding-top: 0.7rem;
+  }
+}

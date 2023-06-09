@@ -1,0 +1,95 @@
+@import "../../css/vars.scss";
+
+@mixin basic-input-ui {
+  height: 2.8rem;
+  border-radius: $gap-04;
+  color: $color-blue-light;
+  font-size: $font-size-m;
+}
+
+.form-grid-component {
+  display: grid;
+  grid-row-gap: 10px;
+
+  .form-grid-column {
+    display: grid;
+    grid-auto-rows: auto;  // 28px
+    grid-template-columns: 1fr;
+    grid-row-gap: 0px; //10px
+  }
+
+  .form-grid-row {
+    display: grid;
+    grid-auto-columns: 28px;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+  }
+
+  
+  .ant-form-item-label {
+    white-space: normal;
+    overflow: visible;
+    label {
+      display: flex;
+      color: $color-blue-light;
+      font-size: $font-size-xsm;
+    }
+    .ant-form-item-required::after {
+      content: "*";
+      color: $color-red;
+    }
+  }
+    .text-input {
+      @include basic-input-ui;
+    }
+    .select-box {
+      .ant-select-selector {
+        @include basic-input-ui;
+        .ant-select-selection-search {
+          input {
+            height: 2.6rem;
+            font-size: $font-size-m;
+          }
+        }
+      }
+    }
+    .date-picker {
+      @include basic-input-ui;
+    }
+
+
+  .form-item-rowspan > .ant-form-item-label > label {
+    align-items: flex-start;
+    padding-top: $gap-02;
+    line-height: 1.4;
+  }
+  .ant-form-item-has-error {
+    .ant-form-item-control-input-content {
+      .ant-input {
+        border-color: $color-border-red;
+      }
+      .ant-picker {
+        border-color: $color-border-red;
+      }
+    }
+  }
+}
+.fields-wrapper {
+  .ant-form-item-label {
+    white-space: normal;
+    overflow: visible;
+    label {
+      display: flex;
+      color: $color-blue-light;
+      font-size: $font-size-m;
+    }
+    .ant-form-item-required::after {
+      content: "*";
+      color: $color-red;
+    }
+  }
+
+}
+.cursor-pointer{
+  cursor: pointer;
+}

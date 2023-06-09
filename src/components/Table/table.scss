@@ -1,0 +1,491 @@
+@import "../../css/vars.scss";
+@import "../../css/mixin.scss";
+
+.table-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .loader {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    .loader-spin {
+      position: fixed;
+      top: 50%;
+    }
+  }
+  .pagination {
+    padding: 1.5rem;
+    button {
+      margin: 0 0.5rem 0 0.5rem;
+    }
+  }
+  .custom-pagination {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(flex-end);
+    button {
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      padding: 0;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      outline: none;
+      transition: all 0.3s;
+      color: #000000d9;
+      cursor: pointer;
+      &:hover {
+        color: #2e79f8;
+        border: 1px solid #2e79f8;
+      }
+    }
+    select {
+      height: 32px;
+      margin-left: 6px;
+      color: #2a4a79;
+      font-size: 12px;
+      font-weight: normal;
+      border: 1px solid #d9d9d9;
+      background: transparent;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    .custom-text-input {
+      .ant-input {
+        margin-bottom: 0px;
+      }
+    }
+
+    input {
+      border: 1px solid #d9d9d9;
+      background: transparent;
+      border-radius: 2px;
+      height: 32px;
+      width: 60px;
+      padding: 0 6px;
+    }
+    span {
+      color: #2a4a79;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+}
+
+.app-table {
+  margin: 0;
+  background-color: $color-white;
+  position: relative;
+  border: 1px solid $button-border;
+  border-radius: $border-radius-base;
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  .csr-pointer {
+    cursor: pointer;
+  }
+
+  .no-data-text {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  table {
+    border-spacing: 0;
+    box-shadow: none;
+    font-weight: $font-regular;
+    border: none;
+    width: 100%;
+    .both-sort-arrow {
+      display: inline-flex;
+      width: 10px;
+      flex-direction: column;
+      line-height: 10px;
+      padding-left: 3px;
+      span {
+        font-size: 9px;
+        line-height: 8px;
+      }
+    }
+    .up-sort-arrow,
+    .down-sort-arrow {
+      padding-left: 3px;
+    }
+    .table-data {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 0;
+      .feild-row {
+        display: inline;
+        span {
+          display: inline-block;
+          & + span {
+            display: inline;
+          }
+        }
+      }
+    }
+    .table-header {
+      @include flexbox;
+      @include align-items(center);
+    }
+    tbody {
+      color: $color-blue-light;
+      font-size: $font-size-xsm;
+      tr {
+        :last-child {
+          td {
+            border-bottom: 0;
+          }
+        }
+        &:nth-child(odd) {
+          background: $app-background;
+          .tdBgColor {
+            background: $app-background;
+          }
+        }
+        box-shadow: inset 0 -1px 0 0 $button-border;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.07);
+        }
+      }
+      .td-selected {
+        background-color: $color-dark-blue;
+      }
+      .td-disabled {
+        background-color: $disabled-section-gainsboro;
+      }
+    }
+    th {
+      border-right: 1px solid #bacce9;
+      background: #d6e6f7;
+      &.table-data {
+        border-right: 1px solid #bacce9;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      &:last-child {
+        border-right: none;
+        padding-right: 4px;
+      }
+      &.text-align-right {
+        text-align: right;
+        .table-header {
+          justify-content: flex-end;
+        }
+      }
+    }
+    td {
+      margin: 0;
+      border-bottom: none;
+      border-right: none;
+      &:first-child {
+        padding-left: 1.6rem;
+        font-weight: $font-bold;
+        a {
+          color: $color-blue;
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+      height: 2.8rem;
+      padding: $gap-07 $gap-07 $gap-07 $gap-08;
+      &.tdPadding {
+        padding-left: 4.8rem;
+      }
+    }
+    thead {
+      tr {
+        box-shadow: inset 0 -1px 0 0 $button-border;
+        th {
+          height: 3.6rem;
+          text-align: left;
+          color: $color-blue-light;
+          font-weight: $font-bold;
+          font-size: $font-size-xsm;
+          padding: $gap-06 $gap-04 $gap-06 0.8rem;
+          &:first-child {
+            padding-left: 1.6rem;
+          }
+
+          &:last-child {
+            &.divider {
+              border-right: none;
+            }
+          }
+          &.thPadding {
+            padding-left: 4.8rem;
+          }
+          &.thBacbground {
+            background-color: $color-light-gray;
+            border-bottom: 1px solid $button-border;
+          }
+          &.divider {
+            border-right: 1px solid $button-border;
+          }
+          .ant-form-item-required::after {
+            content: "*";
+            color: $color-red;
+          }
+          .req-star {
+            padding-left: $gap-04;
+            padding-top: 0px;
+          }
+        }
+      }
+    }
+    .resizer {
+      display: inline-block;
+      width: $gap-10;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateX(50%);
+      z-index: 1;
+      touch-action: none;
+    }
+  }
+  .spinner {
+    width: 100%;
+    margin: 2rem 0;
+    overflow: hidden;
+  }
+}
+
+/* ---- Browser specific css ---- */
+
+@-moz-document url-prefix() {
+  .app-table {
+    table {
+      .table-header {
+        span {
+          padding-left: $gap-02;
+          & + span {
+            font-size: $gap-07;
+            padding-left: $gap-02;
+          }
+        }
+        .both-sort-arrow {
+          padding-left: 0;
+          span {
+            font-size: $gap-07;
+            line-height: $gap-07;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.checkbox-with-arrow {
+  @include flexbox;
+  @include align-items(center);
+  .sm-checkbox {
+    width: 12px;
+    .ant-checkbox + span {
+      display: none;
+    }
+    .ant-checkbox-wrapper {
+      width: 12px;
+    }
+  }
+}
+.select-option-dropdown {
+  position: relative;
+  .top-gap-for-header {
+    display: none;
+  }
+  &:hover {
+    .top-gap-for-header {
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: -12px;
+      width: 120px;
+      height: 52px;
+      background: transparent;
+      z-index: 9;
+      .dropdown-option-box {
+        position: absolute;
+        width: 120px;
+        top: 8px;
+        left: 0;
+        z-index: 9;
+        background: #fff;
+        box-shadow: 2px 7px 9px #ccc;
+        padding: 6px 0;
+        .on-hover-value {
+          display: none;
+          position: absolute;
+          right: -170px;
+          top: 6px;
+          background: #f7f9fb;
+          padding: 8px 16px 8px 12px;
+          box-shadow: 7px 2px 9px #ccc;
+          &::before {
+            content: "";
+            background: url("../../img/checkbox-dropdown-right-icon.png");
+            width: 12px;
+            height: 10px;
+            position: absolute;
+            left: -6px;
+          }
+          p {
+            margin: 0;
+          }
+        }
+        ul {
+          margin: 0;
+          li {
+            padding: 6px 12px;
+            cursor: pointer;
+            &:hover {
+              background: #e9f3fe;
+              & + .on-hover-value {
+                display: block !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .arrow-down-icon {
+    background: url("../../img/checkbox-dropdown-icon.png");
+    width: 7px;
+    height: 6px;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-top: 2px;
+    z-index: 1;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    padding: 0;
+    border: none;
+  }
+}
+
+/* ---- End Browser specific css ---- */
+
+.table-filters {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(flex-end);
+  .table-count {
+    font-size: $font-size-s;
+    margin: 0 $gap-06 $gap-06;
+    font-weight: 500;
+    color: $color-blue-light;
+    @include flexbox();
+    @include align-items(center);
+    .count-value {
+      display: inline-block;
+      padding-left: $gap-06;
+    }
+  }
+  .table-filter-inner {
+    margin-bottom: $gap-08;
+    .ant-input-group-addon {
+      button {
+        margin-left: 0;
+      }
+    }
+    button {
+      margin-left: 1.6rem;
+    }
+
+    @include flexbox();
+    .filter-components {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: $max-desktop) {
+  .app-table {
+    table {
+      font-weight: $font-medium;
+    }
+  }
+  .display-view {
+    .ant-row {
+      .ant-col {
+        &.ant-col-md-9 {
+          max-width: 11rem;
+          width: 11rem;
+          label {
+            width: 11rem;
+            max-width: 11rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+            line-height: 3rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  .app-table table tbody {
+    font-size: $font-size-m;
+  }
+  .app-table table thead tr th {
+    font-size: $font-size-m;
+  }
+}
+
+@media (max-width: $mobile) {
+  .table-filters {
+    @include flex-direction(column);
+  }
+  .table-container {
+    overflow: scroll;
+    .app-table {
+      width: 80rem;
+    }
+  }
+  .app-table {
+    .no-data-text {
+      @include justify-content(flex-start);
+    }
+  }
+}
+@media (max-width: $tablet-medium) {
+  .table-filters .table-filter-inner {
+    @include flex-wrap(wrap);
+    button {
+      margin-left: 0;
+      margin-right: $gap-08;
+      &#provider_billing_add {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+.affixed-table {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.table-in-scroll-header {
+  position: absolute;
+  z-index: 1;
+  box-shadow: none;
+  height: auto !important;
+}

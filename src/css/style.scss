@@ -1,0 +1,901 @@
+@import "./vars";
+@import "./root";
+@import "./mixin";
+
+/*Table of Content
+
+    1. Typography css
+    2. Default css
+
+*/
+
+/* ------------- Typography css ---------------*/
+:root {
+  height: 100%;
+  min-height: 100%;
+  font-size: 10px; // 1rem
+}
+html,
+body {
+  height: 100%;
+  .un-selectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: #f7f9fb !important;
+  color: $content-color !important;
+  font-family: "Roboto", sans-serif !important;
+  font-size: $font-size-m !important;
+  font-weight: $font-medium;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant: none;
+  font-feature-settings: "none";
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+*:focus {
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-blue-light !important;
+  font-weight: $font-medium;
+}
+h1 {
+  font-size: $font-size-xxl;
+  margin-bottom: 2rem;
+  font-weight: $font-bold !important;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: $font-size-lxl;
+  margin-bottom: 1.6rem;
+  &.h2-title {
+    font-size: $font-size-ml;
+  }
+}
+h3 {
+  font-size: $font-size-ml;
+  margin-bottom: 1.6rem;
+  line-height: $font-size-xxl;
+  &.bold {
+    font-weight: $font-bold;
+  }
+}
+
+p {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: $gap-08;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ------------- End of Typography css ---------------*/
+
+/* ------------- Default css ---------------*/
+
+#app-root,
+#app-root > .app {
+  height: 100%;
+  width: 100%;
+}
+
+.main-form-container {
+  border-radius: $border-radius-base;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+  background-color: $color-white;
+  padding: 2.4rem 2.4rem 1.6rem 2.4rem;
+}
+
+.flex {
+  @include flexbox();
+}
+.flex-auto {
+  @include flex(auto);
+}
+.justify-content-sp-bt {
+  @include justify-content(space-between);
+}
+.justify-content-sp-ev {
+  @include justify-content(space-evenly);
+}
+.justify-content-flex-end {
+  @include justify-content(flex-end);
+}
+.justify-content-center {
+  @include justify-content(center);
+}
+.justify-content-flex-start {
+  @include justify-content(flex-start);
+}
+.align-center {
+  @include align-items(center);
+}
+.align-baseline {
+  @include align-items(baseline);
+}
+.align-flex-start {
+  @include align-items(flex-start);
+}
+.align-flex-end {
+  @include align-items(flex-end);
+}
+.flex-dir-column {
+  @include flex-direction(column);
+}
+.flex-dir-row {
+  @include flex-direction(row);
+}
+.flex-grow-1 {
+  @include flex-grow(1);
+}
+
+.font-medium {
+  font-weight: $font-medium;
+}
+.min-width-92 {
+  display: inline-block;
+  min-width: 9.2rem;
+}
+.flex-1 {
+  @include flex(1);
+}
+.red-star {
+  color: $color-red;
+}
+.green-text {
+  color: $color-green;
+}
+.mr-rt-24 {
+  margin-right: 2.4rem !important;
+}
+.mr-rt-28 {
+  margin-right: 2.8rem !important;
+}
+.mng-radio-center {
+  padding: 0px 0 $gap-12 0;
+  box-sizing: border-box;
+}
+.mr-left-5 {
+  margin-left: $gap-05;
+}
+.mr-left-20 {
+  margin-left: 2rem;
+}
+.mr-left-30 {
+  margin-left: 3rem;
+}
+.mr-left-60 {
+  margin-left: 6rem;
+}
+.mr-top-20 {
+  margin-top: 2rem;
+}
+.mr-lt-12 {
+  margin-left: $gap-12;
+}
+.mr-lt-40 {
+  margin-left: 4rem;
+}
+.mr-lt-16 {
+  margin-left: 1.6rem;
+}
+.mr-top-16 {
+  margin-top: 1.6rem;
+}
+.mr-top-12 {
+  margin-top: $gap-12;
+}
+.mr-top-8 {
+  margin-top: $gap-08;
+}
+.mr-top-10 {
+  margin-top: $gap-10;
+}
+.mr-top-18 {
+  margin-top: 1.8rem;
+}
+.mr-bt-16 {
+  margin-bottom: 1.6rem;
+}
+.mr-bt-10 {
+  margin-bottom: $gap-10;
+}
+.mr-btm-6 {
+  margin-bottom: $gap-06;
+}
+.mr-bt-24 {
+  margin-bottom: 2.4rem;
+}
+.mr-bt-48 {
+  margin-bottom: 4.8rem;
+}
+.mr-bt-12 {
+  margin-bottom: $gap-12;
+}
+.mr-bt-8 {
+  margin-bottom: $gap-08;
+}
+.mr-bt-4 {
+  margin-bottom: $gap-04;
+}
+.mr-bt-3 {
+  margin-bottom: $gap-03;
+}
+.mr-bt-2 {
+  margin-bottom: $gap-02;
+}
+.mr-bt-0 {
+  margin-bottom: 0;
+}
+.mr-rt-16 {
+  margin-right: 1.6rem;
+}
+.mr-rt-12 {
+  margin-right: $gap-12;
+}
+.mr-rt-8 {
+  margin-right: $gap-08;
+}
+.mr-rt-5 {
+  margin-right: $gap-05;
+}
+.mr-tb-4 {
+  margin-top: $gap-04;
+  margin-bottom: $gap-04;
+}
+.mr-5 {
+  margin: $gap-05;
+}
+.mr-tp-5 {
+  margin-top: $gap-05;
+}
+.mr-tp-10 {
+  margin-top: $gap-10;
+}
+.mr-tp-20 {
+  margin-top: $gap-10;
+}
+.mr-bt-5 {
+  margin-bottom: $gap-05;
+}
+.mr-lt-5 {
+  margin-left: $gap-05;
+}
+.mr-lt-8 {
+  margin-left: $gap-08;
+}
+.mr-lt-30 {
+  margin-left: 3rem;
+}
+.mr-lt-10 {
+  margin-left: $gap-10;
+}
+.pd-bt-6 {
+  padding-bottom: $gap-06;
+}
+.pd-lt-8 {
+  padding-left: $gap-08;
+}
+.pd-lt-12 {
+  padding-left: $gap-12;
+}
+.pd-bt-2 {
+  padding-bottom: $gap-02 !important;
+}
+.mr-top-ne-9 {
+  margin-top: -$gap-09;
+}
+.mr-top-4 {
+  margin-top: $gap-04;
+}
+.mr-top-2 {
+  margin-top: $gap-02;
+}
+.mr-top-46 {
+  margin-top: 4.6rem;
+}
+.mr-top-6 {
+  margin-top: $gap-06;
+}
+.min-height-50 {
+  min-height: 124px;
+}
+.padding-8 {
+  padding: $gap-08;
+}
+.height-9 {
+  height: $gap-09;
+}
+.padding-5 {
+  padding: $gap-05;
+}
+.posi-relative {
+  position: relative;
+}
+
+.custom-table-scroll {
+  overflow-y: scroll;
+  max-height: 130px;
+}
+
+.custom-user-table {
+  .app-table {
+    table {
+      border-radius: $gap-04;
+      tbody {
+        tr {
+          td {
+            &:first-child {
+              background: $color-green;
+              color: $color-white;
+            }
+          }
+        }
+      }
+      tfoot {
+        tr {
+          td {
+            &:first-child {
+              background: $color-green;
+              color: $color-white;
+              font-size: $font-size-xsm;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --------------Filter css ---------------*/
+
+.filter-area {
+  @include flexbox();
+  @include justify-content(space-between);
+  @include align-items(center);
+  .filter-area-left {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    .cus-input-wrap {
+      margin-bottom: 1.6rem;
+    }
+  }
+  &.mr-manage {
+    .filter-area-left {
+      @include align-items(center);
+      h4 {
+        margin: 0;
+      }
+      .cus-input-wrap {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+/* --------------tabs css -----------------*/
+
+.custom-input .ant-row .ant-form-item-label > label,
+.custom-select .ant-row .ant-form-item-label > label,
+.custom-checkbox .ant-row .ant-form-item-label > label,
+.custom-picker .ant-row .ant-form-item-label > label,
+.custom-radio .ant-row .ant-form-item-label > label,
+.custom-autocomplete .ant-row .ant-form-item-label > label,
+.time-picker-wrap .ant-row .ant-form-item-label > label {
+  white-space: nowrap;
+  max-width: 11.6rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 3rem;
+  &:after {
+    content: "";
+    margin: 0 $gap-01 0 $gap-02;
+  }
+}
+
+.app-table {
+  table {
+    .sm-checkbox {
+      .ant-row {
+        &.ant-form-item {
+          margin-bottom: 0;
+        }
+        .ant-form-item-control {
+          .ant-form-item-control-input {
+            min-height: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+  .custom-checkbox {
+    max-height: 1.8rem;
+    margin-top: -$gap-08;
+  }
+  .ant-form-item-explain {
+    display: none;
+  }
+  thead {
+    th {
+      .sm-checkbox {
+        .ant-checkbox {
+          position: static;
+          top: auto;
+        }
+      }
+    }
+  }
+}
+
+.ros-header-switch-wrapper .custom-switch-wrap .ant-radio-group {
+  margin-left: $gap-08;
+  .ant-radio-button-wrapper {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: $font-size-xsm;
+  }
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  height: 2.8rem;
+}
+
+.filter-components {
+  .ant-picker {
+    padding: 0 1.1rem 0;
+    height: 2.8rem;
+  }
+}
+.input-wrap {
+  &.filter-select-box {
+    & + .ant-picker {
+      margin-right: 1.6rem;
+    }
+  }
+}
+
+.all-select-wrap {
+  .ant-select.ant-select-multiple.ant-select .ant-select-selection-item {
+    height: auto;
+  }
+  .ant-select-multiple .ant-select-selection-item-content {
+    white-space: normal;
+  }
+  .ant-select-selection-item-content {
+    span {
+      word-break: break-all;
+    }
+  }
+}
+
+
+.select-area-box {
+  width: 30.6rem;
+  @include flexbox;
+  .custom-select {
+    width: 100%;
+    margin-right: 1.6rem;
+  }
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.min-width-procedure {
+  .custom-autocomplete {
+    min-width: 10rem;
+  }
+}
+.exception-term-para {
+  p {
+    margin-bottom: 0;
+  }
+  .col {
+    .ant-row {
+      @include justify-content(center);
+    }
+  }
+}
+.ant-radio-group-solid {
+  .ant-radio-button-wrapper {
+    height: 2.8rem;
+    line-height: 2.8rem;
+  }
+}
+.exception-description {
+  .custom-input {
+    &.non-editable {
+      .ant-row .ant-form-item-control .ant-input {
+        height: 1.6rem;
+      }
+      height: 1.6rem;
+      padding-right: $gap-12;
+      & + .non-editable {
+        padding-right: 0;
+      }
+      .ant-input {
+        height: 1.6rem;
+      }
+    }
+  }
+}
+
+
+.custom-select,
+.auto-complete-search {
+  .ant-row
+    .ant-select-single:not(.ant-select-customize-input)
+    .ant-select-selector {
+    padding: 0 $gap-06;
+    .ant-select-selection-search {
+      min-width: 60px;
+      .ant-select-selection-search-input {
+        padding-right: $gap-04;
+        font-size: $font-size-xsm;
+      }
+    }
+    .ant-select-selection-placeholder {
+      min-width: 74px;
+    }
+    .ant-select-selection-item {
+      font-size: $font-size-m;
+      min-width: 7.6rem;
+    }
+  }
+  .ant-select-single .ant-select-selector .ant-select-selection-search {
+    left: $gap-06;
+  }
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-search {
+    right: 1.6rem;
+  }
+  .ant-select-arrow {
+    right: 7px;
+    width: 10px;
+    height: 10px;
+    .anticon-search {
+      width: 14px;
+      font-size: 10px;
+      top: 1px;
+      position: relative;
+    }
+  }
+  .ant-select-clear {
+    right: 6px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
+// override css
+.ant-menu {
+  font-size: $font-size-m;
+}
+.ant-checkbox-inner {
+  &::after {
+    width: 5px !important;
+    height: 7px !important;
+  }
+}
+.sm-checkbox {
+  .ant-checkbox-inner {
+    &:after {
+      width: 5px !important;
+      height: 7px !important;
+    }
+  }
+}
+.mr-bt-20 {
+  margin-bottom: 20px;
+}
+.ant-form label {
+  font-size: $font-size-xsm;
+}
+
+.radio-option-gap {
+  .ant-radio-group {
+    .ant-radio-wrapper {
+      margin-right: 0.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.regular-weight {
+  font-weight: $font-regular;
+}
+
+.cursor-pointer {
+  &.block-ui-display {
+    margin-bottom: 8px;
+  }
+}
+
+.p-rt-2 {
+  padding-right: 2px;
+}
+.p-lt-4 {
+  padding-left: 4px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background: #f5f5f5 !important;
+  font-weight: $font-regular !important;
+}
+
+.ant-select-multiple .ant-select-selection-item-content {
+  font-size: $font-size-xsm;
+}
+
+.mr-top-neg-8 {
+  margin-top: -8px;
+}
+.mr-top-veg-10 {
+  margin-top: -10px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $content-color !important;
+  font-size: $font-size-s !important;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $content-color !important;
+  font-size: $font-size-s !important;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $content-color !important;
+  font-size: $font-size-s !important;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $content-color !important;
+  font-size: $font-size-s !important;
+}
+.ant-input-number-input {
+  padding: 0 6px !important;
+}
+.task-filter-form {
+  @include flexbox;
+  @include justify-content(space-between);
+  .form-grid-component {
+    width: 924px;
+    @media (min-width: $lg-desktop) {
+      width: 1400px;
+    }
+  }
+}
+
+.required-star-red {
+  color: #cc3d00;
+}
+
+.width-100-pr {
+  width: 100%;
+}
+
+.flex-wrap {
+  @include flex-wrap(wrap);
+}
+
+.mr-bottom-8 {
+  margin-bottom: $gap-08;
+}
+
+.mr-bottom-4 {
+  margin-bottom: $gap-04;
+}
+
+.inline-right {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    margin-right: $gap-05;
+  }
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bg-white.circle {
+  background: $color-white;
+}
+
+.bg-red.circle {
+  background: $color-red;
+}
+
+.bg-green.circle {
+  background: $color-green;
+}
+
+.ant-select-item-empty {
+  text-align: center;
+}
+
+.filter-patient-autocomplete {
+  width: 100%;
+  min-width: 15rem;
+  .custom-autocomplete .ant-select-clear {
+    display: block;
+  }
+}
+.filter-modifier-autocomplete {
+  width: 100%;
+  min-width: 8rem;
+  max-width: 8rem;
+  position: relative;
+  .custom-autocomplete .ant-select-clear {
+    display: block;
+  }
+
+  .crosswalk-checkbox-row {
+    position: absolute;
+    top: 2.5rem;
+    overflow: hidden;
+    width: 100%;
+    .crosswalk-checkbox {
+      width: 100%;
+      z-index: 1000;
+      line-height: 1;
+      padding-left: $gap-03;
+      border-bottom-left-radius: $gap-03;
+      border-bottom-right-radius: $gap-03;
+      background-color: $content-dark-subcolor;
+      transform: translateY(-8px) scaleY(0);
+      transition: all 0.1s ease;
+      padding-top: $gap-03;
+      padding-bottom: $gap-01;
+      span {
+        font-size: $font-size-xxm;
+      }
+      .ant-checkbox {
+        transform: scale(0.8);
+      }
+    }
+    .show {
+      transform: translateY(-2px) scaleY(1);
+    }
+  }
+}
+
+.encounter-diagnosis-row {
+  .filter-modifier-autocomplete {
+    width: 100%;
+    min-width: 17rem;
+    max-width: 17rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Track */
+.navigation-list::-webkit-scrollbar-track {
+  background: #2e79f8;
+}
+
+.navigation-list {
+  overflow-x: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d2ddef;
+  box-shadow: inset 0 0 5px #8e9eaf;
+  border-radius: 200px;
+}
+
+.notes {
+  @include flexbox();
+  color: $color-blue-light;
+  font-size: $font-size-xsm;
+  div {
+    text-overflow: ellipsis;
+    width: 5rem;
+    overflow: hidden;
+  }
+}
+
+.ant-tree-select-dropdown {
+  &.insurance-tree-dropdown {
+    width: 20rem !important;
+    background: $app-background;
+    padding-top: 0;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.content-label {
+  font-size: $font-size-xsm;
+  color: $color-blue-light;
+}
+.danger {
+  color: $color-red;
+}
+
+.ant-notification {
+  z-index: 9999 !important;
+}
+
+.flex-space-between {
+  @include justify-content(space-between);
+  flex: 1;
+}
+
+.heading-align-center {
+  text-align: center;
+}
+
+.checkin-modal-form-body {
+  .app-table {
+    .ant-form-item-explain {
+      display: inline-block;
+    }
+  }
+}

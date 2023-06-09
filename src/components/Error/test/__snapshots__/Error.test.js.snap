@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component testing should match snapshot with message. 1`] = `
+<div>
+  <div>
+    <span>
+      Hii I am error
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Error component testing should match snapshot with multiple messages. 1`] = `
+<div>
+  <div>
+    <div>
+      Hi this is error.
+    </div>
+    <div>
+      How are you?
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Error component testing should match snapshot with no messages. 1`] = `
+<div>
+  <div>
+    <span />
+  </div>
+</div>
+`;

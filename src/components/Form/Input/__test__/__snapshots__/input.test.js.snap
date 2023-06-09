@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match input form item snapshot should match input snapshot without form item 1`] = `
+<div>
+  <div
+    style="flex: 1;"
+  >
+    <div>
+      <form
+        class="ant-form ant-form-horizontal ant-form-hide-required-mark ant-form-middle"
+        id="form"
+      >
+        <div
+          class="sc-AxjAm hGbGhh form-grid-component"
+        >
+          <div
+            class="custom-input"
+          >
+            <div
+              class="ant-row"
+            >
+              <div
+                class="ant-col ant-col-8"
+              >
+                <div
+                  class="ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-no-colon"
+                    for="test-input"
+                    title="Test Input"
+                  >
+                    Test Input
+                  </label>
+                  <span
+                    class="req-star"
+                  />
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-16"
+              >
+                <input
+                  autosize="[object Object]"
+                  class="ant-input"
+                  data-testid="test-input"
+                  maxlength="20"
+                  name="testInput"
+                  placeholder="Test Input"
+                  type="password"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should match input form item snapshot should match snapshot 1`] = `
+<div>
+  <div
+    style="flex: 1;"
+  >
+    <div>
+      <form
+        class="ant-form ant-form-horizontal ant-form-hide-required-mark ant-form-middle"
+        id="form"
+      >
+        <div
+          class="sc-AxjAm hGbGhh form-grid-component"
+        >
+          <div
+            class="custom-input"
+          >
+            <div
+              class="ant-row"
+            >
+              <div
+                class="ant-col ant-col-8"
+              >
+                <div
+                  class="ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-no-colon"
+                    for="test-input"
+                    title="Test Input"
+                  >
+                    Test Input
+                  </label>
+                  <span
+                    class="req-star"
+                  />
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-16"
+              >
+                <div
+                  class="ant-row ant-form-item"
+                >
+                  <div
+                    class="ant-col ant-col-20 ant-form-item-control"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          autosize="[object Object]"
+                          class="ant-input"
+                          data-testid="test-input"
+                          id="form_testInput"
+                          maxlength="20"
+                          name="testInput"
+                          placeholder="Test Input"
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

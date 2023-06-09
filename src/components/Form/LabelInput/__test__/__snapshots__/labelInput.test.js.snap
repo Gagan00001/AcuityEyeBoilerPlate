@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match error snapshot should match snapshot 1`] = `
+<div>
+  <div
+    class="custom-input-disabled"
+  >
+    <div
+      class="ant-row"
+    >
+      <div
+        class="ant-col ant-col-10"
+      >
+        <div
+          class="ant-form-item-label ant-form-item-label-left"
+        >
+          <label
+            class="ant-form-item-no-colon"
+            for="label-input"
+            title=""
+          />
+          <span
+            class="req-star ant-form-item-required"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-col ant-col-14"
+      >
+        <div
+          class="ant-row ant-form-item"
+        >
+          <div
+            class="ant-col ant-form-item-control"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input ant-input-disabled"
+                  disabled=""
+                  id=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

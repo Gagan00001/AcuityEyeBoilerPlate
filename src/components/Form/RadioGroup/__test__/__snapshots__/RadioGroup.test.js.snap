@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroup should match snapshot 1`] = `
+<div>
+  <div>
+    <div
+      class="ant-radio-group ant-radio-group-solid"
+    >
+      <label
+        class="ant-radio-button-wrapper ant-radio-button-wrapper-checked"
+      >
+        <span
+          class="ant-radio-button ant-radio-button-checked"
+        >
+          <input
+            checked=""
+            class="ant-radio-button-input"
+            data-testid="radio_group_general"
+            id="contract_terms_tabs_general"
+            type="radio"
+            value="general"
+          />
+          <span
+            class="ant-radio-button-inner"
+          />
+        </span>
+        <span>
+          General
+        </span>
+      </label>
+      <label
+        class="ant-radio-button-wrapper"
+      >
+        <span
+          class="ant-radio-button"
+        >
+          <input
+            class="ant-radio-button-input"
+            data-testid="radio_group_exception"
+            id="contract_terms_tabs_exception"
+            type="radio"
+            value="exception"
+          />
+          <span
+            class="ant-radio-button-inner"
+          />
+        </span>
+        <span>
+          Exceptions
+        </span>
+      </label>
+      <label
+        class="ant-radio-button-wrapper"
+      >
+        <span
+          class="ant-radio-button"
+        >
+          <input
+            class="ant-radio-button-input"
+            data-testid="radio_group_modifiers"
+            id="contract_terms_tabs_modifiers"
+            type="radio"
+            value="modifiers"
+          />
+          <span
+            class="ant-radio-button-inner"
+          />
+        </span>
+        <span>
+          Modifiers
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;

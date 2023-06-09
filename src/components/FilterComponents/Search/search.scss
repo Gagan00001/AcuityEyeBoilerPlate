@@ -1,0 +1,59 @@
+@import "../../../css/vars";
+
+.filter-ant-search {
+  margin-right: 1.6rem;
+  .ant-search {
+    .ant-input-search {
+      height: 2.8rem;
+      .ant-input-affix-wrapper {
+        height: 2.6rem;
+        border: none;
+      }
+      .ant-input-group-addon {
+        &:before {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          display: block;
+          border-left: 1px solid rgba(165, 188, 223, 0.7);
+          transition: all 0.3s;
+          content: "";
+          z-index: 9;
+        }
+        .ant-input-search-button {
+          height: 2.4rem;
+          border: none;
+        }
+      }
+      input {
+        height: auto;
+      }
+    }
+    .ant-input-suffix {
+      svg {
+        font-size: 1.6rem;
+        color: $content-color;
+        top: 0px;
+        position: relative;
+      }
+    }
+    .ant-row {
+      &.ant-form-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.ant-input-wrapper {
+  &.ant-input-group {
+    .ant-input-group-addon {
+      .ant-input-search-button {
+        height: 28px;
+      }      
+    }
+    .ant-input-affix-wrapper {
+      padding: 2px 11px;
+    }
+  }
+}

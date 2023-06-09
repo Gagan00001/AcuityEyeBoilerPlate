@@ -1,0 +1,84 @@
+@import "../../../css/vars";
+@import "../../../css/root";
+@import "../../../css/mixin";
+
+.non-editable {
+  .ant-row{
+    .ant-form-item{
+      margin: 0;
+      .ant-form-item-control-input{
+        .ant-form-item-control-input-content {
+          .ant-input-number-disabled {
+            border: none;
+            cursor: pointer;
+            background: none;
+            padding: 0;
+            font-size: $font-size-xsm;
+            color: $color-blue-light;
+            .ant-input-number-input-wrap{
+              .ant-input-number-input{
+                padding-left: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.custom-input {
+  .ant-row {
+    .ant-form-item-label > label {
+      font-size: $font-size-xsm;
+      color: $color-blue-light;
+    }
+    .ant-form-item-control {
+      .ant-input-number {
+        border: $gap-01 solid $border-color;
+        height: 2.8rem;
+        border-radius: 4px;
+        color: $color-blue-light;
+        .ant-input-number-handler-wrap {
+          display: none;
+        }
+      }
+      .ant-input-number:focus {
+        border-color: #57a8e9;
+        outline: 0;
+        -webkit-box-shadow: 0 0 0 2px rgba(87, 168, 233, 0.2);
+        box-shadow: 0 0 0 2px rgba(87, 168, 233, 0.2);
+      }
+    }
+  }
+  .ant-form-item-has-error {
+    .ant-form-item-control-input-content {
+      .ant-input-number {
+        border-color: $color-border-red;
+      }
+      .ant-picker {
+        border-color: $color-border-red;
+      }
+    }
+  }
+  &.non-editable{
+    .ant-row {
+      .ant-form-item-control {
+        .ant-input-number {
+          color: $color-blue-light;
+          font-size: $font-size-xsm;
+        }
+      }
+      .ant-select-single {
+        .ant-select-selector {
+          .ant-select-selection-item{
+            font-size: $font-size-xsm;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-col.ant-col-20.ant-form-item-control {
+  max-width: 100%;
+}

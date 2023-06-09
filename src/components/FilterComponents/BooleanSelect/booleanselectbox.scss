@@ -1,0 +1,10 @@
+@import "../../../css/vars";
+
+.filter-select-box{
+    margin-right: 1.2rem;
+    .ant-row{
+        &.ant-form-item{
+            margin-bottom: 0;
+        }
+    }
+}

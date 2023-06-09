@@ -1,0 +1,145 @@
+@import "../../css/mixin.scss";
+@import "../../css/vars.scss";
+
+.login-wrap {
+  width: 100%;
+  &:before {
+    content: "";
+    background: url("../../img/login-bg.png");
+    width: 61%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-size: cover;
+  }
+  .login-logo {
+    width: 17.5rem;
+    padding-top: 1.3rem;
+    img {
+      max-width: 100%;
+    }
+  }
+  .forget-pass {
+    color: $content-color;
+    font-size: $font-size-m;
+    font-weight: $font-medium;
+    margin-top: 2.4rem;
+    display: block;
+    text-align: center;
+  }
+  h1 {
+    line-height: normal;
+    margin-bottom: 3.2rem;
+  }
+  .login-section {
+    width: 35%;
+    padding-left: 8.3rem;
+    .login-field-wrap {
+      width: 38.6rem;
+      .custom-input {
+        margin-bottom: $gap-10;
+      }
+    }
+    .fields-wrapper {
+      input {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.login-field-wrap {
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $content-color !important;
+    font-size: $font-size-m;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $content-color !important;
+    font-size: $font-size-m;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: $content-color !important;
+    font-size: $font-size-m;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: $content-color !important;
+    font-size: $font-size-m;
+  }
+}
+
+.login-alignment {
+  height: calc(100vh - 8rem);
+  @include flexbox;
+  @include align-items(center);
+}
+.shadow-bbg-1 {
+  background: url("../../img/login-mask-2.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 200px;
+  background-size: cover;
+}
+.shadow-bbg-2 {
+  background: url("../../img/login--btm-mask.png");
+  position: absolute;
+  bottom: 0;
+  right: 38%;
+  width: 158px;
+  height: 66px;
+  background-size: cover;
+}
+
+@media (min-width: $max-desktop) {
+  .login-wrap {
+    &:before {
+      width: 54%;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .login-wrap:before {
+    content: "";
+    width: 64%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .login-alignment {
+    min-width: 400px;
+    z-index: 9;
+    position: relative;
+  }
+}
+
+@media (max-width: $tablet-medium) {
+  .login-wrap .login-section {
+    width: 100%;
+    padding-left: 1.5rem;
+    .login-field-wrap {
+      width: 100%;
+      padding-right: 1.6rem;
+    }
+  }
+  .login-alignment {
+    min-width: 100%;
+  }
+  .login-wrap .login-logo {
+    width: 12rem;
+  }
+  .shadow-bbg-1 {
+    width: 12rem;
+    height: 13.4rem;
+  }
+}

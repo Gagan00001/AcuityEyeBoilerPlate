@@ -1,0 +1,34 @@
+@import "../../../css/vars";
+@import "../../../css/root";
+@import "../../../css/mixin";
+
+.ant-radio-wrapper {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  span {
+    color: $color-blue-light;
+    font-size: $font-size-xsm;
+  }
+  .ant-radio{
+    & + span{
+      line-height: 1;
+    }
+  }
+}
+
+.custom-radio {
+  .ant-row .ant-form-item-label > label {
+    font-size: $font-size-xsm;
+    color: $color-blue-light;
+  }
+}
+
+.vertical-radio {
+  .ant-radio-group {
+    @include flexbox;
+    @include flex-direction(column);
+    label {
+      margin-bottom: 4px;
+    }
+  }
+}
