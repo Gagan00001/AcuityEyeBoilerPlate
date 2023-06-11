@@ -7,7 +7,7 @@ const formName = {
 };
 
 const formId = {
-  PATIENT_DEMOGRAPHIC: "patient-demographic",
+  LOGIN_FORM: "login-form",
 };
 
 const listIds = {

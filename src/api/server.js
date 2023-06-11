@@ -2,7 +2,6 @@ import axios from "axios";
 
 import { baseUrl } from "./constants";
 
-
 const PROTOCOL = process.env.SSL ? "https" : "http";
 const PATH = process.env.API_PATH ? `/${process.env.API_PATH}` : "";
 const API = process.env.API
@@ -28,5 +27,9 @@ export const multipartServer = axios.create({
     "Content-Type": "multipart/form-data",
   },
 });
+
+server.interceptors.response.use((response) => response.data);
+
+multipartServer.interceptors.response.use((response) => response.data);
 
 export default server;

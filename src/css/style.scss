@@ -388,6 +388,19 @@ img {
   }
 }
 
+.right-content {
+  @include flexbox();
+  @include flex-direction(column);
+  flex: 80;
+  -webkit-flex: 80;
+  padding-left: 64px;
+  position: relative;
+  transition: padding 0.2s ease-in;
+  &.open-menu {
+    padding-left: 25.6rem;
+  }
+}
+
 /* --------------Filter css ---------------*/
 
 .filter-area {
@@ -415,26 +428,6 @@ img {
 }
 
 /* --------------tabs css -----------------*/
-
-.custom-input .ant-row .ant-form-item-label > label,
-.custom-select .ant-row .ant-form-item-label > label,
-.custom-checkbox .ant-row .ant-form-item-label > label,
-.custom-picker .ant-row .ant-form-item-label > label,
-.custom-radio .ant-row .ant-form-item-label > label,
-.custom-autocomplete .ant-row .ant-form-item-label > label,
-.time-picker-wrap .ant-row .ant-form-item-label > label {
-  white-space: nowrap;
-  max-width: 11.6rem;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  line-height: 3rem;
-  &:after {
-    content: "";
-    margin: 0 $gap-01 0 $gap-02;
-  }
-}
 
 .app-table {
   table {
@@ -511,7 +504,6 @@ img {
   }
 }
 
-
 .select-area-box {
   width: 30.6rem;
   @include flexbox;
@@ -564,7 +556,6 @@ img {
   }
 }
 
-
 .custom-select,
 .auto-complete-search {
   .ant-row
@@ -609,8 +600,6 @@ img {
     height: 10px;
   }
 }
-
-
 
 // override css
 .ant-menu {

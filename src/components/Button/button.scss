@@ -1,0 +1,121 @@
+@import "../../css/vars.scss";
+@import "../../css/mixin";
+
+/* ------------- Button css ---------------*/
+
+button {
+  &.btn {
+    min-height: 3.6rem;
+    border:  $gap-01 solid $button-border;
+    padding: $gap-06 1.3rem;
+    color: $content-color;
+    font-size: $font-size-m;
+    border-radius: $gap-04;
+    outline: none;
+    background: transparent;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      outline: none;
+      box-shadow: none;
+    }
+    &:hover{
+      filter: brightness(0.8);
+    }
+    &.min-wt-86 {
+      min-width: 8.6rem;
+    }
+    &.opc-05 {
+      opacity: 0.5;
+    }
+    &.active{
+      background: $color-green;
+      border: $gap-01 solid $color-green;
+      color: $color-white;
+      &:hover {
+          filter: brightness(1.1);
+        }
+    }
+    &.sm-btn{
+      min-height: 2.8rem;
+      padding: 0 $gap-08;
+      font-size: $font-size-xsm;
+      max-height: 2.8rem;
+    }
+  }
+  &.btn-success {
+    background: $color-green;
+    border: $gap-01 solid $color-green !important;
+    color: $color-white !important;
+    &:hover {
+      color: $color-white !important;
+      background: $color-green;
+      border: $gap-01 solid $color-green !important;
+      filter: brightness(1.1);
+    }
+    &:focus,
+    &:active {
+      color: $color-white !important;
+    }
+  }
+  &.btn-ghost {
+    background: transparent;
+    border-color: rgba(60, 108, 179, 0.2);
+    color: $color-blue-light;
+    &:hover,
+    &:focus,
+    &:active {
+      background: transparent;
+      border-color: rgba(60, 108, 179, 0.2);
+      color: $color-blue-light;
+    }
+        &:hover {
+          filter: brightness(0.1);
+        }
+  }
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+a {
+  &.btn-success {
+    &.btn {
+      min-height: 3.6rem;
+      padding: $gap-06 1.3rem;
+      font-size: $font-size-m;
+      border-radius: $gap-04;
+      outline: none;
+      font-weight: $font-bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: $color-green;
+      border: $gap-01 solid $color-green;
+      color: $color-white;
+      display: inline-block;
+    }
+  }
+}
+.filter-btns-group{
+  button{
+    &.btn{
+      font-weight: $font-medium;
+      border-radius: $border-radius-base;
+      height: 3.6rem;
+    }
+  }
+  .ant-search{
+    margin-top: $gap-04;
+    .ant-input-search{
+      background: transparent;
+      .ant-input{
+        background: transparent;
+      }
+    }
+  }
+}
+/* ------------- End of button css ---------------*/

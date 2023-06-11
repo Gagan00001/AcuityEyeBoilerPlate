@@ -19,6 +19,7 @@ import { formId, UiRoutes } from "../../lib/constants";
 import formFieldValuesParser from "../../lib/formFieldValuesParser";
 
 import "./login.scss";
+import useRedirect from "../../hooks/useRedirect";
 
 const loginEncryptData = (data) => {
   const key = CryptoJS.enc.Utf8.parse("9882252788320914");
@@ -70,16 +71,18 @@ function Login(props) {
 
   const [form] = AntdForm.useForm();
   const [isLoggedIn, setLoggedIn] = useState(true);
+  const { push } = useRedirect();
 
-  const onRequestComplete = useCallback((response) => {
-    if (!get(response, "response.alreadyTokenExist")) {
-      if (get(response, "response.accessToken")) {
+  const onRequestComplete = useCallback(({ response }) => {
+    if (!response.alreadyTokenExist) {
+      if (response.accessToken) {
         setLoggedIn(true);
         const token = get(response, "response.accessToken");
         localStorage.setItem("token", token);
-        const pKey = get(response, "response.pKey");
-        localStorage.setItem("pKey", pKey);
+        push("/sampleForm");
       }
+    } else {
+      push("/sampleForm");
     }
     setLoggedIn(false);
   }, []);

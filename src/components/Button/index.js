@@ -1,15 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
-const Button = React.forwardRef(({
-  children, type, className, ...props
-}, ref) => (
-  // eslint-disable-next-line react/button-has-type
-  <button type={type} className={classNames('btn', className)} ref={ref} data-testid="commonBtn" {...props}>
-    {children}
-  </button>
-));
+import "./button.scss";
+
+const Button = React.forwardRef(
+  ({ children, type, className, ...props }, ref) => (
+    // eslint-disable-next-line react/button-has-type
+    <button
+      type={type}
+      className={classNames("btn", className)}
+      ref={ref}
+      data-testid="commonBtn"
+      {...props}
+    >
+      {children}
+    </button>
+  )
+);
 
 Button.propTypes = {
   type: PropTypes.string,
@@ -21,8 +29,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: 'button',
-  className: '',
+  type: "button",
+  className: "",
   children: [],
 };
 
