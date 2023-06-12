@@ -182,7 +182,7 @@ const updateLocalStorage = (formId, response, payload) => {
   }
 };
 function Form(props) {
-  const { params } = useRedirect();
+  const { params = {} } = useRedirect();
   const dispatch = useDispatch();
   const {
     name,

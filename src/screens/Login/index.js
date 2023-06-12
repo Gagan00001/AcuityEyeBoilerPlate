@@ -73,19 +73,22 @@ function Login(props) {
   const [isLoggedIn, setLoggedIn] = useState(true);
   const { push } = useRedirect();
 
-  const onRequestComplete = useCallback(({ response }) => {
-    if (!response.alreadyTokenExist) {
-      if (response.accessToken) {
-        setLoggedIn(true);
-        const token = get(response, "response.accessToken");
-        localStorage.setItem("token", token);
+  const onRequestComplete = useCallback(
+    ({ response }) => {
+      if (!response.alreadyTokenExist) {
+        if (response.accessToken) {
+          setLoggedIn(true);
+          const token = get(response, "response.accessToken");
+          localStorage.setItem("token", token);
+          push("/sampleForm");
+        }
+      } else {
         push("/sampleForm");
       }
-    } else {
-      push("/sampleForm");
-    }
-    setLoggedIn(false);
-  }, []);
+      setLoggedIn(false);
+    },
+    [push]
+  );
 
   useEffect(() => {
     const token = localStorage.getItem("token");

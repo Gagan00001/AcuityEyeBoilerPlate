@@ -127,6 +127,90 @@ img {
   padding: 2.4rem 2.4rem 1.6rem 2.4rem;
 }
 
+.sprite-img {
+  background: url(../img/Sprite.png);
+  background-size: 751px;
+}
+.sprite-img-before {
+  position: relative;
+  &:before {
+    content: "";
+    background: url(../img/Sprite.png);
+    background-size: 751px;
+  }
+}
+
+
+.pannel {
+  margin-bottom: $gap-08;
+  box-shadow: $box-shadow-base;
+  border-radius: $border-radius-base;
+  &.back-pannel {
+    box-shadow: none;
+    border: 1px solid $button-border;
+    .pannel-heading {
+      min-height: 2.8rem;
+      border-radius: $border-radius-base $border-radius-base 0 0;
+      border-bottom: 1px solid $button-border;
+    }
+    .pannel-body {
+      padding: 1.6rem;
+    }
+  }
+  &.table-pannel {
+    .pannel-body {
+      padding: 0;
+      .app-table {
+        margin: 0;
+        border: none;
+        overflow: hidden;
+        border-radius: 0 0 $gap-06 $gap-06;
+      }
+    }
+    .pannel-heading {
+      box-shadow: inset 0 -1px 0 0 $button-border;
+    }
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  .pannel-heading {
+    background: $color-light-grayies;
+    min-height: 2.4rem;
+    padding: $gap-04 1.6rem;
+    @include flexbox();
+    @include align-items(center);
+    color: $color-blue-text;
+    font-size: $font-size-xsm;
+    font-weight: $font-bold;
+    p {
+      margin: 0;
+      color: $color-blue-text;
+    }
+    .back-arrow {
+      position: relative;
+      padding-left: 3.2rem;
+      cursor: pointer;
+      &:before {
+        content: "";
+        width: 1.7rem;
+        height: 1.6rem;
+        // background: url("../img/backarrow.png");
+        position: absolute;
+        background-repeat: no-repeat;
+        left: 0;
+      }
+    }
+  }
+  .pannel-body {
+    padding: $gap-08 1.6rem $gap-04 1.6rem;
+    background: $color-white;
+    border-bottom-left-radius: $gap-04;
+    border-bottom-right-radius: $gap-04;
+  }
+}
+
 .flex {
   @include flexbox();
 }

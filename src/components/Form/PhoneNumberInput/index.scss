@@ -82,3 +82,65 @@
 .ant-col.ant-col-20.ant-form-item-control {
   max-width: 100%;
 }
+
+.phone-group {
+  position: relative;
+  .custom-input {
+    & + .custom-checkbox {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 23%;
+    }
+  }
+  .custom-autocomplete,
+  .referring-physician-autocomplete-container {
+    & + .custom-autocomplete,
+    & + .custom-checkbox {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 23%;
+    }
+  }
+  &.phone-group-validation{
+    @include flexbox;
+    .custom-input {
+      max-width: calc(100% - 80px);
+      min-width: calc(100% - 80px);
+      width: calc(100% - 80px);
+      .ant-col-8{
+        min-width: calc( 33.33333333% + 27px );
+      }
+      .ant-col-10{
+        min-width: calc(41.66666667% + 30px);
+      }
+      & + .custom-input {
+        position: relative;
+        max-width: 80px;
+        min-width: 80px;
+        width: 80px;
+      }
+    }
+  }
+  &.phone-group-validation-width{
+    @include flexbox;
+    .custom-input {
+      max-width: calc(100% - 80px);
+      min-width: calc(100% - 80px);
+      width: calc(100% - 80px);
+      .ant-col-8{
+        min-width: calc( 33.33333333% + 56px );
+      }
+      .ant-col-10{
+        min-width: calc(41.66666667% + 33px);
+      }
+      & + .custom-input {
+        position: relative;
+        max-width: 80px;
+        min-width: 80px;
+        width: 80px;
+      }
+    }
+  }
+}

@@ -3,12 +3,14 @@ import {
   useNavigate,
   useMatch,
   generatePath,
+  useParams,
 } from "react-router-dom";
 
 function useRedirect() {
   const location = useLocation();
   const navigate = useNavigate();
-  const match = useMatch('/');
+  const params = useParams();
+  // const match = useMatch("/");
   const { search } = location;
   const query = {};
   if (search) {
@@ -21,13 +23,12 @@ function useRedirect() {
       });
   }
   return {
-    params: match.params,
-    url: match.url,
+    params: params,
     push: navigate,
     goBack: () => navigate(-1),
     location,
     replace: navigate,
-    path: match.path,
+    path: location.pathname,
     generatePath,
     query,
   };
